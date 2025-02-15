@@ -2,10 +2,10 @@ import React from "react";
 
 const Modal = ({ children, ...props }) => {
   return (
-    <section className="absolute z-10 flex justify-center items-center w-screen h-screen bg-white ">
+    <section className="fixed top-0 left-0 z-10 flex justify-center items-center w-screen h-screen bg-white ">
       <form
         {...props}
-        className=" min-w-[400px] h-fit p-5 bg-gray-50 rounded-md"
+        className=" min-w-[400px] max-w-[500px] h-fit p-5 bg-gray-50 rounded-md"
       >
         {children}
       </form>

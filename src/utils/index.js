@@ -3,9 +3,6 @@
 // import { User } from "./User.js";
 
 // const user = new User("Johan");
-// user.addRobot(
-//   new Robot("rx", ROBOT_TYPES.BIPEDAL, ROBOT_TYPES.BIPEDAL.taskCapacity)
-// );
 
 // console.log(user);
 // console.log(user.getRobots());

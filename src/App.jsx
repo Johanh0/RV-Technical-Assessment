@@ -8,7 +8,6 @@ import Footer from "./components/Footer.jsx";
 
 function App() {
   const { user, setUser } = useContext(AppContext);
-
   return (
     <>
       {!user && <UserModal />}

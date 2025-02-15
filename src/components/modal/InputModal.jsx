@@ -8,7 +8,7 @@ const InputModal = ({
   return (
     <>
       <label
-        for="inputname"
+        htmlFor="inputname"
         className="block text-gray-800 font-semibold text-sm cursor-pointer"
       >
         {inputTitle}
