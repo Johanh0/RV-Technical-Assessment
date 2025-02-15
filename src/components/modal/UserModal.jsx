@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import AppContext from "../../context/AppProvider";
 import { User } from "../../utils/User";
+import { ALL_TASKS } from "../../utils/Task";
 import Modal from "./Modal";
 import InputModal from "./InputModal";
 import PrimaryButton from "../buttons/PrimaryButton";
@@ -11,7 +12,7 @@ const UserModal = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newUser = new User(userInput);
+    const newUser = new User(userInput, ALL_TASKS);
     setUser(newUser);
   };
 
