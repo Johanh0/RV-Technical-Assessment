@@ -10,7 +10,7 @@ const Header = ({ username }) => {
             <p className=" text-2xl font-bold">BOT-O-MAT</p>
           </div>
           <div>
-            <HiOutlineUser className="  text-2xl" />
+            {/* <HiOutlineUser className="  text-2xl" /> */}
 
             {/* <p>{user?.getName()}</p> */}
           </div>

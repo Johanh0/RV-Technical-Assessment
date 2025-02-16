@@ -81,7 +81,6 @@ const RobotModal = ({ robotSelected, handleChange, handleInput }) => {
           </div>
         </div>
       </div>
-      <div></div>
     </div>
   );
 };
