@@ -13,7 +13,7 @@ const TabsMenu = () => {
       component: <ExecutionSection />,
     },
     {
-      title: "Tasks",
+      title: "My Tasks",
       component: <TaskSection />,
     },
     {

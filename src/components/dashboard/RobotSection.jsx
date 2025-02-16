@@ -8,7 +8,7 @@ import { ROBOT_TYPES } from "../../utils/Robot";
 import { Robot } from "../../utils/Robot";
 
 const RobotSection = () => {
-  const { user } = useContext(AppContext);
+  const { user, setUser } = useContext(AppContext);
   const [modalOpen, setModalOpen] = useState(false);
   const [inputName, setInputName] = useState("");
   const [robotSelected, setRobotSelected] = useState(ROBOT_TYPES["UNIPEDAL"]);
@@ -27,7 +27,10 @@ const RobotSection = () => {
       robotSelected.image,
       robotSelected.speedModifier
     );
-    user.addRobot(newRobot);
+
+    user.robots.push(newRobot);
+    const updateUser = { ...user };
+    setUser(updateUser);
     setModalOpen(false);
   };
 

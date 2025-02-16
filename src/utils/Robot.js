@@ -8,7 +8,7 @@ import aeronautical from "../assets/robots/aeronautical.jpeg";
 export const ROBOT_TYPES = {
   UNIPEDAL: {
     type: "Unipedal",
-    taskCapacity: 5,
+    taskCapacity: 1,
     description:
       "A robot with a single leg, agile but with limited task capacity.",
     image: unipedal,
@@ -16,7 +16,7 @@ export const ROBOT_TYPES = {
   },
   BIPEDAL: {
     type: "Bipedal",
-    taskCapacity: 5,
+    taskCapacity: 2,
     description:
       "A two-legged robot, balanced and capable of handling multiple tasks.",
     image: bipedal,
@@ -24,7 +24,7 @@ export const ROBOT_TYPES = {
   },
   QUADRUPEDAL: {
     type: "Quadrupedal",
-    taskCapacity: 5,
+    taskCapacity: 4,
     description:
       "A four-legged robot, excellent for stability and carrying loads.",
     image: quadrupedal,
@@ -66,18 +66,6 @@ export class Robot {
     this.image = image;
     this.speedModifier = speedModifier;
     this.tasks = [];
-  }
-
-  setName(newName) {
-    if (typeof newName !== "string" || newName.length === 0) {
-      throw new Error("Name must be a valid string!");
-    }
-    this._name = newName;
-  }
-
-  addTask(task, baseTime) {
-    const modifiedTime = baseTime * this.speedModifier;
-    this.tasks.push({ task, timeRequired: modifiedTime });
   }
 }
 

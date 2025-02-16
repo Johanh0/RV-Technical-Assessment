@@ -2,10 +2,12 @@ import { ROBOT_TYPES } from "./Robot.js";
 
 export class Task {
   constructor(name, description, eta, allowedTypes) {
+    this.id = crypto.randomUUID();
     this.name = name;
     this.description = description;
     this.eta = eta;
     this.allowedTypes = allowedTypes;
+    this.isDone = false;
   }
 }
 
