@@ -5,6 +5,7 @@ import arachnid from "../assets/robots/arachnid.jpeg";
 import radial from "../assets/robots/radial.jpeg";
 import aeronautical from "../assets/robots/aeronautical.jpeg";
 
+// Robot types data
 export const ROBOT_TYPES = {
   UNIPEDAL: {
     type: "Unipedal",
@@ -68,54 +69,3 @@ export class Robot {
     this.tasks = [];
   }
 }
-
-export const initialRobots = [
-  new Robot(
-    "MonoBot",
-    ROBOT_TYPES.UNIPEDAL,
-    ROBOT_TYPES.UNIPEDAL.taskCapacity,
-    ROBOT_TYPES.UNIPEDAL.description,
-    ROBOT_TYPES.UNIPEDAL.image,
-    ROBOT_TYPES.UNIPEDAL.speedModifier
-  ),
-  new Robot(
-    "DuoWalker",
-    ROBOT_TYPES.BIPEDAL,
-    ROBOT_TYPES.BIPEDAL.taskCapacity,
-    ROBOT_TYPES.BIPEDAL.description,
-    ROBOT_TYPES.BIPEDAL.image,
-    ROBOT_TYPES.BIPEDAL.speedModifier
-  ),
-  new Robot(
-    "QuadroStrider",
-    ROBOT_TYPES.QUADRUPEDAL,
-    ROBOT_TYPES.QUADRUPEDAL.taskCapacity,
-    ROBOT_TYPES.QUADRUPEDAL.description,
-    ROBOT_TYPES.QUADRUPEDAL.image,
-    ROBOT_TYPES.QUADRUPEDAL.speedModifier
-  ),
-  new Robot(
-    "SpiderMech",
-    ROBOT_TYPES.ARACHNID,
-    ROBOT_TYPES.ARACHNID.taskCapacity,
-    ROBOT_TYPES.ARACHNID.description,
-    ROBOT_TYPES.ARACHNID.image,
-    ROBOT_TYPES.ARACHNID.speedModifier
-  ),
-  new Robot(
-    "RadiaX",
-    ROBOT_TYPES.RADIAL,
-    ROBOT_TYPES.RADIAL.taskCapacity,
-    ROBOT_TYPES.RADIAL.description,
-    ROBOT_TYPES.RADIAL.image,
-    ROBOT_TYPES.RADIAL.speedModifier
-  ),
-  new Robot(
-    "SkyCruiser",
-    ROBOT_TYPES.AERONAUTICAL,
-    ROBOT_TYPES.AERONAUTICAL.taskCapacity,
-    ROBOT_TYPES.AERONAUTICAL.description,
-    ROBOT_TYPES.AERONAUTICAL.image,
-    ROBOT_TYPES.AERONAUTICAL.speedModifier
-  ),
-];

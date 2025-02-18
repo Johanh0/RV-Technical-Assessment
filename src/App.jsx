@@ -7,9 +7,10 @@ import Dashboard from "./components/dashboard/Dashboard.jsx";
 import Footer from "./components/Footer.jsx";
 
 function App() {
-  const { user, setUser } = useContext(AppContext);
+  const { user } = useContext(AppContext);
   return (
     <>
+      {/* If there's not a user display the user modal */}
       {!user && <UserModal />}
 
       <Header />

@@ -5,8 +5,12 @@ import TaskSection from "./TaskSection";
 import RobotSection from "./RobotSection";
 
 const TabsMenu = () => {
+  // useState to render the current tab open
   const [tabContent, setTabContent] = useState(<ExecutionSection />);
+  // useState to know which tab is open
   const [contentSelected, setContentSelected] = useState("Execution Status");
+
+  // Array of objects that contains the data of each tab
   const tabs = [
     {
       title: "Execution Status",

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Tailwind colors */
 @theme {
   --color-primary-50: #f2f5fb;
   --color-primary-100: #e7edf8;

@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import AppContext from "../../context/AppProvider";
 import UserGreeting from "./UserGreeting";
 import PendingTasks from "./PendingTasks";
-import ChartTasks from "./ChartTasks";
+import LeaderBoard from "./LeaderBoard";
 import TabsMenu from "./TabsMenu";
 
 const Dashboard = () => {
@@ -15,11 +15,11 @@ const Dashboard = () => {
   }, [user]);
 
   return (
-    <main className="flex flex-col gap-20 max-w-[1200px] w-full mx-auto p-10 ">
+    <main className="flex flex-col gap-20 max-w-[1200px] w-full mx-auto p-5 md:p-10 ">
       <UserGreeting username={user?.name} />
-      <section className="flex gap-10 w-full  h-fit justify-between">
+      <section className="flex flex-col md:flex-row gap-10 items-center justify-center md:justify-between w-full  h-fit">
         <PendingTasks tasksNumber={pendingTasks} />
-        <ChartTasks />
+        <LeaderBoard userData={user} />
       </section>
       <TabsMenu />
     </main>

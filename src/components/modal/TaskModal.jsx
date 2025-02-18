@@ -1,3 +1,4 @@
+// Task modal is display everytime the user try to create a new task
 const TaskModal = ({
   titleInput,
   timeInput,
@@ -32,7 +33,7 @@ const TaskModal = ({
           htmlFor="input-time"
           className="block text-gray-800 font-semibold text-sm cursor-pointer"
         >
-          Time Required
+          Time Required (milliseconds)
         </label>
         <div className="mt-2">
           <input

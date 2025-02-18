@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
+import AppContext from "../../context/AppProvider";
 import Modal from "../modal/Modal";
 import RobotModal from "../modal/RobotModal";
 import PrimaryButton from "../buttons/PrimaryButton";
 import EmptyMessage from "./EmptyMessage";
-import AppContext from "../../context/AppProvider";
 import { ROBOT_TYPES } from "../../utils/Robot";
 import { Robot } from "../../utils/Robot";
 
+// Display the robot section and the logic to add robots
 const RobotSection = () => {
   const { user, setUser } = useContext(AppContext);
   const [modalOpen, setModalOpen] = useState(false);
@@ -14,11 +15,14 @@ const RobotSection = () => {
   const [robotSelected, setRobotSelected] = useState(ROBOT_TYPES["UNIPEDAL"]);
 
   const handleChange = (event) => {
+    // Get the name of the current robot selected
     const currentRobotSelect = event.target.value.toUpperCase();
+    // add the robot selected to  the state
     setRobotSelected(ROBOT_TYPES[currentRobotSelect]);
   };
 
   const handleSubmit = () => {
+    // creating a new robot
     const newRobot = new Robot(
       inputName,
       robotSelected.type,
@@ -28,9 +32,14 @@ const RobotSection = () => {
       robotSelected.speedModifier
     );
 
+    // Adding the robot to the user
     user.robots.push(newRobot);
+
+    // Updating the global user state
     const updateUser = { ...user };
     setUser(updateUser);
+
+    // Closing the modal
     setModalOpen(false);
   };
 
@@ -60,7 +69,7 @@ const RobotSection = () => {
       <div className="flex gap-10 flex-wrap items-center justify-center">
         {user?.robots.map((robot) => (
           <article
-            className="flex flex-col gap-5 w-[300px] min-h-[490px] h-fit bg-primary-50 p-3 rounded-lg"
+            className="flex flex-col gap-5 w-[300px] min-h-[490px] h-fit bg-primary-100 p-3 rounded-lg"
             key={robot.id}
           >
             <div>
@@ -74,10 +83,12 @@ const RobotSection = () => {
             </div>
             <div className="flex flex-col gap-1">
               <p className="text-sm font-bold text-primary-950">
-                Task capacity: <span>{robot.taskCapacity}</span>
+                Task capacity:{" "}
+                <span className=" text-primary-500">{robot.taskCapacity}</span>
               </p>
               <p className="text-sm font-bold text-primary-950">
-                Speed: <span>{robot.speedModifier}</span>
+                Speed:{" "}
+                <span className=" text-primary-500">{robot.speedModifier}</span>
               </p>
             </div>
           </article>

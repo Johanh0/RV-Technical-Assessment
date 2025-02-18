@@ -11,6 +11,7 @@ export class Task {
   }
 }
 
+// Initial tasks
 export const ALL_TASKS = [
   new Task("dish", "do the dishes", 1000, [
     ROBOT_TYPES.BIPEDAL,

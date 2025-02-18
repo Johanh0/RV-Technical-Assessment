@@ -8,26 +8,33 @@ const ExecutionSection = () => {
   const [robotSelected, setRobotSelected] = useState(user?.robots[0]);
 
   const hanldeChange = (event) => {
+    // Get the robot name
     const robotName = event.target.value;
+
+    // Use the robot name to get the robot and saved it in the state robotSelected
     setRobotSelected(user.robots.find((robot) => robotName == robot.name));
-    console.log(robotSelected);
   };
 
   const handleStartTask = () => {
+    // Get the task capacity
     const robotTaskCapacity = robotSelected.taskCapacity;
 
     let i = 0;
     while (i < robotTaskCapacity && user.tasks.length > 0) {
+      // Get the first task
       const userTask = user.tasks[0];
+
+      // Save the task in the robotSelected
       robotSelected.tasks.push(userTask);
-      user.taskProgress = user.tasks.filter((task) => task.id === userTask.id);
+
+      // Delete the task from the user
       user.tasks = user.tasks.filter((task) => task.id !== userTask.id);
       i++;
     }
 
+    // Update tasks from user and robotSelected
     const newRobotTasks = { ...robotSelected };
     const updateUser = { ...user };
-
     setRobotSelected(newRobotTasks);
     setUser(updateUser);
   };
@@ -40,8 +47,8 @@ const ExecutionSection = () => {
   };
 
   return (
-    <section className="flex  gap-10">
-      <div className="flex flex-col gap-3 w-fit h-fit py-3 px-5 bg-primary-50 rounded-lg">
+    <section className="flex flex-col md:flex-row  gap-10">
+      <div className="flex flex-col gap-3 w-full md:w-fit h-fit py-3 px-5 bg-primary-50 rounded-lg">
         <div>
           <p className=" text-primary-950 font-bold ">Choose Your Robot</p>
         </div>

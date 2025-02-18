@@ -1,7 +1,8 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext } from "react";
 
 const AppContext = createContext();
 
+// User context to have the user information globally
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   return (

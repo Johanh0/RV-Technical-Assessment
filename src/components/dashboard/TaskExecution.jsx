@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ProgressBar from "./ProgressBar";
 
 const TaskExecution = ({
@@ -9,8 +8,6 @@ const TaskExecution = ({
   isDone,
   onComplete,
 }) => {
-  const [isCompleted, setIsCompleted] = useState(false);
-
   return (
     <div className="flex flex-col gap-3 p-3 w-full bg-primary-50 rounded-lg">
       <div className="flex flex-col gap-1">

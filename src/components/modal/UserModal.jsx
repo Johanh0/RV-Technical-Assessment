@@ -12,7 +12,9 @@ const UserModal = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // Create a new user object with the name and default tasks
     const newUser = new User(userInput, ALL_TASKS);
+    // Add new user to the global state user
     setUser(newUser);
   };
 

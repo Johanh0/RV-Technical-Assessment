@@ -1,5 +1,6 @@
 import { ROBOT_TYPES } from "../../utils/Robot";
 
+// Robot modal is display everytime the user try to create a new user
 const RobotModal = ({ robotSelected, handleChange, handleInput }) => {
   return (
     <div className="flex flex-col gap-5">
